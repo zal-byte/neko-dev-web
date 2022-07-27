@@ -25,7 +25,7 @@ class BlogController extends Controller
     }
 
     public function blog_view( $id ){
-        $data = BlogModel::find($id)->first();       
+        $data = BlogModel::where('id','=', $id)->first();       
 
         // $data = BlogModel::where('id', '=', $id )->first();
         return view('blog-view',['data'=>$data]);
