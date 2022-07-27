@@ -134,31 +134,30 @@ use App\Models\User;
 					</p>
 				</div>
 			</div>
-			<div class="card border-0 shadow-sm mt-4">
-				<div class="card-body">
-					<b> Comments</b>
-					<div class="container-fluid">
-						@if( $data->comments )
-							@foreach($data->comments as $comment)
-							@php 	
+			<div class="container mt-2 mb-2">
+				<h3 class="font-weight-bold">
+					Comments
+				</h3>
 
-								$usr = User::find($comment->user_id)->first();
-							@endphp
-							<div class="card border-0 mb-1 mt-1 ">
-								<div class="card-body">
-									<h5 class="text-dark font-weight-bold">
-										{!! $usr->name !!}
-									</h5>
-									<hr>
-									<p>
-										{!! $comment->msg !!}
-									</p>
-								</div>	
+				@if($data->comments)
+
+
+					@foreach($data->comments as $comment)
+					@php 
+						 $usr = User::find($comment->user_id)->first();
+					@endphp
+						<div class="card border-0 shadow-sm m-2">
+							<div class="card-body">
+								<h5 class="font-weight-bold">
+									{!! $usr->name !!}
+								</h5>
+								<p>
+									{!! $comment->msg !!}
+								</p>
 							</div>
-							@endforeach
-						@endif
-					</div>
-				</div>
+						</div>
+					@endforeach
+				@endif	
 			</div>
 		</div>
 		<div class="col-sm-3" id="modd">
