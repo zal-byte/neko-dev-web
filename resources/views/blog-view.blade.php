@@ -136,6 +136,9 @@ use Illuminate\Support\Facades\Auth;
 			<div class="card border-0 shadow-sm mt-4">
 				<div class="card-body">
 					<b> Comments</b>
+					<div class="container">
+						
+					</div>
 				</div>
 			</div>
 		</div>

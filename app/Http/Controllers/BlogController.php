@@ -25,9 +25,13 @@ class BlogController extends Controller
     }
 
     public function blog_view( $id ){
-        $data = BlogModel::where('id', '=', $id )->first();
-        return view('blog-view',['data'=>$data]);
+        $test = BlogModel::find($id)->comments;
+        dd($test);
+
+        // $data = BlogModel::where('id', '=', $id )->first();
+        // return view('blog-view',['data'=>$data]);
     }
+
     public function new_blog_post( Request $request ){
         $validator = Validator::make( $request->all(), [
             'title'=>'required',
