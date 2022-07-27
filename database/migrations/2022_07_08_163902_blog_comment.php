@@ -20,10 +20,9 @@ class BlogComment extends Migration
 
             $table->text("msg");
             $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate("cascade");
+            $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('blog_id')->nullable();
-            $table->foreign('blog_id')->references('id')->on('blog')->onDelete('cascade')->onUpdate('cascade');
-            
+            $table->foreign('blog_id')->references('id')->on('blog');
             $table->timestamps();
         });
     }

@@ -25,11 +25,10 @@ class BlogController extends Controller
     }
 
     public function blog_view( $id ){
-        $test = BlogModel::find($id)->comments;
-        dd($test);
+        $data = BlogModel::find($id)->first();       
 
         // $data = BlogModel::where('id', '=', $id )->first();
-        // return view('blog-view',['data'=>$data]);
+        return view('blog-view',['data'=>$data]);
     }
 
     public function new_blog_post( Request $request ){

@@ -1,5 +1,6 @@
 @php
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 @endphp
 
 <!DOCTYPE html>
@@ -136,8 +137,26 @@ use Illuminate\Support\Facades\Auth;
 			<div class="card border-0 shadow-sm mt-4">
 				<div class="card-body">
 					<b> Comments</b>
-					<div class="container">
-						
+					<div class="container-fluid">
+						@if( $data->comments )
+							@foreach($data->comments as $comment)
+							@php 	
+
+								$usr = User::find($comment->user_id)->first();
+							@endphp
+							<div class="card border-0 mb-1 mt-1 ">
+								<div class="card-body">
+									<h5 class="text-dark font-weight-bold">
+										{!! $usr->name !!}
+									</h5>
+									<hr>
+									<p>
+										{!! $comment->msg !!}
+									</p>
+								</div>	
+							</div>
+							@endforeach
+						@endif
 					</div>
 				</div>
 			</div>
