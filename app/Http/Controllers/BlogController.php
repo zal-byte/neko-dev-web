@@ -24,6 +24,8 @@ class BlogController extends Controller
         return view('main.blog', ['data'=>$data]);
     }
 
+    
+
     public function blog_view( $id ){
         $data = BlogModel::where('id','=', $id)->first();       
 
@@ -32,6 +34,7 @@ class BlogController extends Controller
     }
 
     public function new_blog_post( Request $request ){
+
         $validator = Validator::make( $request->all(), [
             'title'=>'required',
             'description'=>'required'

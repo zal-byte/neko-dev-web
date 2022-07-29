@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Auth;
 	}
 
 	@media screen and (min-width:  762px){
-		#mynav{
+		#myNav{
 			display: none;
 		}
 	}
@@ -71,7 +71,7 @@ use Illuminate\Support\Facades\Auth;
 			</div>
 
 			@else
-			<div class="navbar navbar-expand-lg bg-dark sticky-top" id="mynav">
+			<div class="navbar navbar-expand-lg bg-dark sticky-top" >
 				<div class="container-fluid">
 					<a class="navbar-brand"> <b> NEKOProject </b> </a>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

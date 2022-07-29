@@ -46,7 +46,7 @@
 							<span class="badge bg-light text-dark"> RP Version <span class="badge bg-secondary"> {!! $post->rp_version !!}</span></span> 
 							@endif
 							@if($post->min_engine_version)
-							<span class="badge bg-light text-dark">Min engine version<span class="badge bg-secondary"> {!!$post->min_engine_version !!}</span></span>
+							<span class="badge bg-light text-dark">Min engine version <span class="badge bg-secondary"> {!!$post->min_engine_version !!}</span></span>
 							@endif
 						</div>
 					</div>

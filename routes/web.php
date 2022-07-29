@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;    
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BlogController;
+use App\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +25,7 @@ Route::post('/signup', [AuthController::class, 'signup_post'])->name('signup_pos
 Route::get('/blog-view/{id}', [BlogController::class, 'blog_view'])->name('blog-view');
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog');
 
+
 Route::group(['middleware'=>'auth'], function(){
     
     Route::get('/home',[BlogController::class ,'home'])->name('home');
@@ -32,5 +35,7 @@ Route::group(['middleware'=>'auth'], function(){
     Route::get('/new-blog', [BlogController::class, 'new_blog'])->name('new-blog');
     Route::post('/new-blog', [BlogController::class, 'new_blog_post'])->name('new-blog-post');
 
+
+    Route::get('/post/manage', [AdminController::class, 'postManage'])->name('postManage');
 
 });
